@@ -1,17 +1,17 @@
 import { useState } from "react";
 
 const useDisclosure = () => {
-	const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
-	const handleOpen = () => {
-		setIsOpen(true);
-	};
+  const handleOpen = () => {
+    setIsOpen(true);
+  };
 
-	const handleClose = () => {
-		setIsOpen(false);
-	};
+  const handleClose = () => {
+    setIsOpen(false);
+  };
 
-	return { isOpen, handleOpen, handleClose };
+  return { isOpen, handleOpen, handleClose };
 };
 
 export default useDisclosure;

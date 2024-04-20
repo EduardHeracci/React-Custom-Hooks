@@ -1,25 +1,25 @@
 import { useState, useEffect } from "react";
 
 const useScreenSize = () => {
-	const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
+  const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
 
-	useEffect(() => {
-		const handleResize = () => {
-			setScreenSize({
-				width: Number(typeof window !== "undefined" && window.innerWidth),
-				height: Number(typeof window !== "undefined" && window.innerHeight),
-			});
-		};
+  useEffect(() => {
+    const handleResize = () => {
+      setScreenSize({
+        width: Number(typeof window !== "undefined" && window.innerWidth),
+        height: Number(typeof window !== "undefined" && window.innerHeight),
+      });
+    };
 
-		window.addEventListener("resize", handleResize);
-		handleResize();
+    window.addEventListener("resize", handleResize);
+    handleResize();
 
-		return () => {
-			window.removeEventListener("resize", handleResize);
-		};
-	}, []);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
-	return { screenSize, setScreenSize };
+  return { screenSize, setScreenSize };
 };
 
 export default useScreenSize;
